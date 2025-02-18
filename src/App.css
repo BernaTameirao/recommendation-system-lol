@@ -1,0 +1,89 @@
+.background {
+
+  height: 100vh;
+  width: 100vw;
+  background-color: #151b25;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-div {
+
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.center-div h1{
+
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.center-div-content {
+
+  height: 70%;
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-div-content-text {
+
+  margin-bottom: 2vh;
+}
+
+.center-div-content-cards {
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 50vw;
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between label and input */
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto; /* Centering the input */
+}
+
+/* Input Styling */
+.input-custom {
+  padding: 10px 12px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none; /* Remove default focus outline */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth interactions */
+}
+
+/* Placeholder Styling */
+.input-custom::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Focus State */
+.input-custom:focus {
+  border-color: #007bff; /* Change border to blue */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle glow */
+}
+
+/* Hover State */
+.input-custom:hover {
+  border-color: #888;
+}
