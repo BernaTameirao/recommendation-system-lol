@@ -39,7 +39,7 @@ function App() {
             const array = [];
             for(let counter=0; counter < numMastery; counter++){
 
-                array.push([query[counter].championId, query[counter].championLevel, query[counter].championPoints]);
+                array.push([query[counter].championId, query[counter].championLevel]);
             }
 
             return array

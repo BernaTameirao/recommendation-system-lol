@@ -1,4 +1,5 @@
 import ChampionDict from "./ChampionDict.jsx";
+import JSZip from 'jszip';
 
 const reverseChampionDict = Object.keys(ChampionDict).reduce((acc, key) => {
     const value = ChampionDict[key];
@@ -19,10 +20,26 @@ function euclideanDistance(ratings1, ratings2) {
 function getNearestNeighbors(targetUser, k) {
     return new Promise((resolve, reject) => {
 
-        const groupedValues = [];
-
-        fetch('/data.bit')
-            .then(response => response.arrayBuffer())
+        fetch('/data.zip')
+            .then(response => {
+                // Check if the response is successful
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch zip file: ${response.statusText}`);
+                }
+                // Convert the response into an ArrayBuffer for binary data
+                return response.arrayBuffer();
+            })
+            // Load the zip using JSZip
+            .then(arrayBuffer => JSZip.loadAsync(arrayBuffer))
+            .then(zip => {
+                // Extract the file named "data.bit" from the zip archive
+                const file = zip.file("data.bit");
+                if (!file) {
+                    throw new Error("data.bit not found in zip archive");
+                }
+                // Return the file's contents as an ArrayBuffer
+                return file.async("arraybuffer");
+            })
             .then(buffer => {
                 const dataView = new DataView(buffer);
                 const numElements = buffer.byteLength / 4;
@@ -35,6 +52,7 @@ function getNearestNeighbors(targetUser, k) {
                 }
 
                 // Group the values into arrays of 169 elements
+                const groupedValues = [];
                 const groupSize = 169;
                 for (let i = 0; i < values.length; i += groupSize) {
                     const group = values.slice(i, i + groupSize);
