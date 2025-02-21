@@ -23,9 +23,9 @@ function translateId(targetKey) {
 }
 
 function normalizeArray(arr) {
-    const min = Math.min(...arr);
-    const max = Math.max(...arr);
-    return arr.map(num => (num - min) / (max - min + 1e-16));
+    const min = 1;
+    const max = 1064;
+    return arr.map(num => (num - min) / (max - min));
 }
 
 function getMasteryFromUser(user) {
