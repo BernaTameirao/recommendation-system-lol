@@ -2,73 +2,131 @@
 
   height: 100vh;
   width: 100vw;
-  background-color: #151b25;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 90%),
+  url('https://www.transparenttextures.com/patterns/asfalt-dark.png'),
+  #202a35
+
 }
 
 .center-div {
 
-  height: 70%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+
 }
 
-.center-div h1{
+.center-div-text1{
 
   font-family: 'Bebas Neue', sans-serif;
+  font-size: calc(2vw + 30px);
+  color: #c3c7fa;
+}
+
+.center-div-text2{
+
+  font-family: "Magneto";
+  line-height: calc(1vw + 5px);
+  font-size: calc(1vw + 15px);
+  color: #cccccc;
+
+}
+
+.center-div-text3{
+
+  font-family: 'Agency FB';
+  color: #cccccc;
+
+  /*align-self: flex-start;*/
+}
+
+.center-div-row-text{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+  filter: drop-shadow(0 0 1em #111119);
+  height: 10%;
 }
 
 .center-div-content {
 
-  height: 70%;
+  height: 85%;
+  width: 50%;
   align-self: center;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+
 }
 
 .center-div-content-text {
 
-  margin-bottom: 2vh;
 }
 
 .center-div-content-cards {
 
-  height: 100%;
+  height: 80%;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  width: 50vw;
+  width: calc(25vw + 150px);
+
+
+}
+
+.center-div-content-icons {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: calc(7vw + 100px);
+  margin-bottom: 50px;
+
 }
 
 /* Input Container */
 .input-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   gap: 8px; /* Space between label and input */
-  width: 100%;
-  max-width: 400px;
   margin: 20px auto; /* Centering the input */
+
+  border-radius: 4px;
+  background-color: white;
+
+  height: 57px;
 }
 
 /* Input Styling */
 .input-custom {
   padding: 10px 12px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-family: 'Agency FB';
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none; /* Remove default focus outline */
   transition: border-color 0.3s, box-shadow 0.3s; /* Smooth interactions */
+
+  width: calc(20vw + 300px);
+  height: 35px;
 }
 
 /* Placeholder Styling */
@@ -86,4 +144,47 @@
 /* Hover State */
 .input-custom:hover {
   border-color: #888;
+}
+
+.vertical-line {
+
+  width: 1px;
+  height: calc(2vw + 30px);
+  background-color: #cccccc;
+}
+
+.input-button {
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth interactions */
+  margin-left: -12px;
+  height: 100%;
+}
+
+/* Focus State */
+.input-button:focus {
+  border-color: #007bff; /* Change border to blue */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle glow */
+  outline: none;
+}
+
+/* Hover State */
+.input-button:hover {
+  border-color: #888;
+}
+
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid black;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

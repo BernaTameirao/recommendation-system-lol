@@ -9,7 +9,7 @@
     position: relative;
 
     height: 50vh;
-    width: 9vw;
+    width: calc(6vw + 50px);
     border: 1px solid whitesmoke;
 
 }

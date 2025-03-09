@@ -1,0 +1,14 @@
+.champion-icon {
+
+    position: relative;
+    width: calc(2vw + 30px);
+}
+
+.champion-icon img {
+
+    user-select: none;
+    width: 100%; /* Makes the image as wide as the parent div */
+    height: 100%; /* Makes the image as tall as the parent div */
+    object-fit: contain; /* Ensures the image covers the div while maintaining aspect ratio */
+    object-position: center; /* Centers the image inside the div */
+}
