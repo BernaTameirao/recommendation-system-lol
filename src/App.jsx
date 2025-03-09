@@ -5,7 +5,7 @@ import axios from 'axios';
 import {ChampionCard} from "./ChampionCard/ChampionCard.jsx";
 import {ChampionIcon} from "./ChampionIcon/ChampionIcon.jsx";
 import {getNearestNeighbors, generateRecommendations} from "./knn";
-import {createQuery, translateId, normalizeArray, getMasteryFromUser} from "./AuxFunctions.jsx";
+import {createQuery, translateId, normalizeArray, getMasteryFromUser, preprocessQuery} from "./AuxFunctions.jsx";
 
 function App() {
 
@@ -23,17 +23,6 @@ function App() {
     }
 
     const handleSend = () => {
-
-        const preprocessQuery = (query, numMastery) => {
-
-            const array = [];
-            for(let counter=0; counter < numMastery; counter++){
-
-                array.push([query[counter].championId, query[counter].championLevel]);
-            }
-
-            return array
-        }
 
         setLoading(true);
 
@@ -66,9 +55,8 @@ function App() {
                 // Create a new array with the updated value
                 const newState = [...prevState];
                 newState[index] = newState[3];
-                    //todo: suggestions.length
-                // if (newState[3] + 1 === suggestions.length) {
-                if (newState[3] + 1 === 4) {
+
+                if (newState[3] + 1 === suggestions.length) {
 
                     newState[3] = 0;
                     return newState;
@@ -154,9 +142,9 @@ function App() {
                         <>
                             <h2 className="center-div-text3">Based on your 3 greatest masteries:</h2>
                             <div className="center-div-content-icons">
-                                <ChampionIcon champion={translateId(mastery[0])}/>
-                                <ChampionIcon champion={translateId(mastery[1])}/>
-                                <ChampionIcon champion={translateId(mastery[2])}/>
+                                <ChampionIcon champion={translateId(mastery[0][0])}/>
+                                <ChampionIcon champion={translateId(mastery[1][0])}/>
+                                <ChampionIcon champion={translateId(mastery[2][0])}/>
                             </div>
                             <div className="center-div-content-cards">
                                 <div onClick={() => updatePosition(0)}>

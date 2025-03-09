@@ -38,4 +38,15 @@ function getMasteryFromUser(user) {
     return masteryList;
 }
 
-export {createQuery, translateId, normalizeArray, getMasteryFromUser};
+function preprocessQuery(query, numMastery) {
+
+    const array = [];
+    for(let counter=0; counter < numMastery; counter++){
+
+        array.push([query[counter].championId, query[counter].championLevel]);
+    }
+
+    return array
+}
+
+export {createQuery, translateId, normalizeArray, getMasteryFromUser, preprocessQuery};
