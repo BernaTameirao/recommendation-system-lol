@@ -142,9 +142,9 @@ function App() {
                         <>
                             <h2 className="center-div-text3">Based on your 3 greatest masteries:</h2>
                             <div className="center-div-content-icons">
-                                <ChampionIcon champion={translateId(mastery[0][0])}/>
-                                <ChampionIcon champion={translateId(mastery[1][0])}/>
-                                <ChampionIcon champion={translateId(mastery[2][0])}/>
+                                <ChampionIcon champion={translateId(mastery[0][0].toString())}/>
+                                <ChampionIcon champion={translateId(mastery[1][0].toString())}/>
+                                <ChampionIcon champion={translateId(mastery[2][0].toString())}/>
                             </div>
                             <div className="center-div-content-cards">
                                 <div onClick={() => updatePosition(0)}>
