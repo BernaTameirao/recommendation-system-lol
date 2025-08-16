@@ -2,6 +2,8 @@
 
     display: flex;
     flex-direction: column;
+
+    align-items: center;
 }
 
 .card {
@@ -68,6 +70,7 @@
 
     font-family: "Bebas Neue";
     color: transparent;
+    margin-top: 0.5vh;
 
     align-self: center;
     user-select: none;
@@ -79,3 +82,4 @@
 
     color: whitesmoke;
 }
+

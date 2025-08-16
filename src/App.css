@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
 
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 90%),
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 90%),
   url('https://www.transparenttextures.com/patterns/asfalt-dark.png'),
   #202a35
 
@@ -28,23 +28,24 @@
 .center-div-text1{
 
   font-family: 'Bebas Neue', sans-serif;
-  font-size: calc(2vw + 30px);
+  font-size: calc(2vw + 45px);
   color: #c3c7fa;
 }
 
 .center-div-text2{
 
-  font-family: "Magneto";
-  line-height: calc(1vw + 5px);
-  font-size: calc(1vw + 15px);
+  font-family: 'Mrs Sheppards', cursive;
+  line-height: calc(0.5vw + 18px);
+  font-size: calc(1vw + 25px);
   color: #cccccc;
 
 }
 
 .center-div-text3{
 
-  font-family: 'Agency FB';
+  font-family: 'Teko';
   color: #cccccc;
+  font-size: calc(1vw + 12px);
 
   /*align-self: flex-start;*/
 }
@@ -62,7 +63,7 @@
 
 .center-div-content {
 
-  height: 85%;
+  height: 88%;
   width: 50%;
   align-self: center;
 
@@ -70,10 +71,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
-}
-
-.center-div-content-text {
 
 }
 
@@ -85,9 +82,7 @@
   flex-direction: row;
   justify-content: space-between;
 
-  width: calc(25vw + 150px);
-
-
+  width: calc(25vw + 160px);
 }
 
 .center-div-content-icons {
@@ -96,8 +91,8 @@
   flex-direction: row;
   justify-content: space-between;
 
-  width: calc(7vw + 100px);
-  margin-bottom: 50px;
+  width: calc(8vw + 150px);
+  margin-bottom: 30px;
 
 }
 
@@ -106,7 +101,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px; /* Space between label and input */
   margin: 20px auto; /* Centering the input */
 
   border-radius: 4px;
@@ -117,15 +111,15 @@
 
 /* Input Styling */
 .input-custom {
-  padding: 10px 12px;
+  padding: 10px;
   font-size: 24px;
-  font-family: 'Agency FB';
+  font-family: 'Teko';
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none; /* Remove default focus outline */
   transition: border-color 0.3s, box-shadow 0.3s; /* Smooth interactions */
 
-  width: calc(20vw + 300px);
+  width: calc(30vw + 150px);
   height: 35px;
 }
 
@@ -158,7 +152,6 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   transition: border-color 0.3s, box-shadow 0.3s; /* Smooth interactions */
-  margin-left: -12px;
   height: 100%;
 }
 
@@ -178,7 +171,7 @@
   width: 15px;
   height: 15px;
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid black;
+  border-top: 4px solid currentColor;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }

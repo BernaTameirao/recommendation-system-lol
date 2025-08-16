@@ -1,7 +1,7 @@
 .champion-icon {
 
     position: relative;
-    width: calc(2vw + 30px);
+    width: calc(2.5vw + 50px);
 }
 
 .champion-icon img {

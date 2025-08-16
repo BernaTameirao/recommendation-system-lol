@@ -52,17 +52,16 @@ function App() {
         setTimeout(() => {
 
             setChampionsCounter(prevState => {
-                // Create a new array with the updated value
                 const newState = [...prevState];
-                newState[index] = newState[3];
 
-                if (newState[3] + 1 === suggestions.length) {
+                do {
+                    newState[index] = newState[3];
+                    newState[3] += 1;
+                    if (newState[3] >= suggestions.length) {
+                        newState[3] = 0;
+                    }
+                } while (newState.some((v, i) => i !== index && v === newState[index]));
 
-                    newState[3] = 0;
-                    return newState;
-                }
-
-                newState[3] += 1;
                 return newState;
             });
             isUpdating.current[index] = false;
@@ -110,9 +109,9 @@ function App() {
                 <div className="center-div-content">
                     { !inputFilled ? (
                         <div className="center-div-content-text">
-                            <h2 className="center-div-text3">Discover new champions to your liking based on your preferences</h2>
+                            <h2 className="center-div-text3">Discover new champions tailored to your play style and preferences.</h2>
                             <div className="input-container">
-                                <input type="text" placeholder="Player Username" className="input-custom"
+                                <input type="text" placeholder="Player Username + Player Tag" className="input-custom"
                                        value={playerName}
                                        onChange={handleNameChange}/>
                                 <button onClick={handleSend} className="input-button">
@@ -140,7 +139,8 @@ function App() {
                         </div>
                     ) : (
                         <>
-                            <h2 className="center-div-text3">Based on your 3 greatest masteries:</h2>
+
+                            <h2 className="center-div-text3">Based on your 3 highest mastery scores:</h2>
                             <div className="center-div-content-icons">
                                 <ChampionIcon champion={translateId(mastery[0][0].toString())}/>
                                 <ChampionIcon champion={translateId(mastery[1][0].toString())}/>
